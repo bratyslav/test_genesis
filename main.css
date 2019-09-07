@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+
+  min-height: 600px;
+  min-width: 750px;
+
+  background-image: url('https://www.sunridgedental.ca/uploads/lK5XVK7n/707x0_1130x0/happyface.jpg');
+  background-repeat: no-repeat;
+  background-size: 150vh 100vh;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold; 
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 10px);
+  max-height: calc(100vh - 10px);
+  padding: 0 0 10px 10px;
+
+  min-height: 590px;
+}
+
+section {
+  height: 100%;
+}
+
+
+
+.navigation__container {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+}
+
+.navigation__container nav {
+  bottom: 10px;
+  left: 8px;
+
+  padding: 2px 50px 5px;
+
+  background-color: white;
+  opacity: 0.7;
+}
+
+.navigation__container nav>ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+
+  font-size: 9px;
+  list-style-type: none;
+}
+
+.navigation__container nav>ul>li {
+  margin-bottom: 10px;
+
+  cursor: pointer;
+}
+
+
+
+.content__container {
+  min-width: 300px;
+  max-width: 300px;
+  height: 100%;
+  display: flex;
+}
+
+.content__top-margin {
+  width: 100%;
+  min-height: 120px;
+  background-color: #ec7099;
+}
+
+.content__column {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content__left-margin {
+  height: 100%;
+  width: 8px;
+  background-color: #ec7099;
+}
+
+.content__left-margin-image {
+  position: relative;
+  display: flex;
+  left: -21px;
+  top: 180px;
+  z-index: 2;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50px;
+  background-color: #ec7099;
+}
+
+.content__left-margin-image>div {
+  width: 36px;
+  height: 36px;
+
+  margin: auto;
+
+  border-radius: 36px;
+  background-color: white;
+  background-image: url('./heart.png');
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  background-position: 5px 5px;
+}
+
+.content {
+  padding: 55px 35px 0;
+  height: 100%;
+
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  text-transform: uppercase;
+  color: #3b3b3b;
+}
+
+.content p:nth-child(2) {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.content p:nth-child(3) {
+  margin-top: 70px;
+  margin-block-end: 10px;
+  font-size: 20px;
+}
+
+.content h1 {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #ec7099;
+}
+
+.content__begin-button {
+  background-color: #ec7099;
+  border: none;
+  border-radius: 10px;
+  font-size: 22px;
+  padding: 8px 25px;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  outline: none;
+}
+
+.content__begin-button:active {
+  background-color: #d46087;
+}
+
+
+
+@media (max-height: 600px) {
+  body {
+    background-size: 900px 600px;
+  }
+}
+
+@media (min-width: 1150px) {
+  .navigation__container {
+    min-width: 60%;
+  }
+  
+  .content__container {
+    min-width: 40%;
+  }
+}
