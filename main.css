@@ -12,6 +12,15 @@ body {
   font-weight: bold; 
 }
 
+.background {
+  position: absolute;
+  z-index: -1;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  
+  width: calc(100% - 300px);
+  min-height: calc(100vh - 15px);
+}
+
 .container {
   display: flex;
   height: calc(100vh - 10px);
@@ -119,7 +128,6 @@ section {
   padding: 55px 35px 0;
   height: 100%;
 
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
   text-transform: uppercase;
   color: #3b3b3b;
 }
@@ -142,13 +150,13 @@ section {
 }
 
 .content__begin-button {
+  padding: 8px 25px;
+  cursor: pointer;
   background-color: #ec7099;
+  color: white;
   border: none;
   border-radius: 10px;
   font-size: 22px;
-  padding: 8px 25px;
-  color: white;
-  cursor: pointer;
   text-transform: uppercase;
   font-weight: bold;
   outline: none;
@@ -167,6 +175,10 @@ section {
 }
 
 @media (min-width: 1150px) {
+  .background {
+    max-width: calc(60% + 10px);
+  }
+
   .navigation__container {
     min-width: 60%;
   }
