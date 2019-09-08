@@ -40,7 +40,8 @@
           
           <div class="content">
             <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</h1>
-            <form>
+
+            <form id="registrationForm" onsubmit="validateForm(event)" novalidate>
               Я ищу:
               <div class="form__searching-sex-container">
                 <label>
@@ -56,29 +57,49 @@
 
               <label class="form__input-wrapper">
                 <div>Ваше имя:</div>
-                <input type="text">
+                <input
+                  type="text"
+                  id="name"
+                  onkeypress="validateInput(event)"
+                  onfocusout="validateInput(event)"
+                >
               </label>
 
               <label class="form__input-wrapper">
                 <div>Email:</div>
-                <input type="text">
+                <input
+                  type="email"
+                  id="email"
+                  onkeypress="validateInput(event)"
+                  onfocusout="validateInput(event)"
+                >
               </label>
 
               <label class="form__input-wrapper">
                 <div>Придумайте пароль:</div>
-                <input type="text">
+                <input
+                  type="password"
+                  id="password"
+                  onkeypress="validateInput(event)"
+                  onfocusout="validateInput(event)"
+                >
               </label>
 
               <label class="form__checkbox-wrapper">
-                <input type="checkbox">
-                <div class="form__checkbox"></div>
+                <input
+                  type="checkbox"
+                  id="agreement"
+                  onchange="validateInput(event)"
+                  onfocusout="validateInput(event)"
+                >
+                <div class="form__checkbox">✓</div>
                 <div>
                   Регистрируясь, вы подтверждаете, что вам уже исполнилось 18 лет
                   и вы ознакомились с правилами пользования сайтом.
                 </div>
               </label>
 
-              <input type="submit" value="Продолжить">
+              <input type="submit" value="Продолжить" id="submit" class="">
             </form>
           </div>
         </div>
@@ -86,5 +107,6 @@
     </div>
   </main>
 
+  <script src="scripts.js"></script>
 </body>
 </html>
