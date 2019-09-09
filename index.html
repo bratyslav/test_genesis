@@ -10,23 +10,28 @@
 </head>
 <body>
   <main>
-    <div class="background"></div>
+    <div class="main__background" id="background"></div>
+    <div id="percentage-background" class="_deactive"></div>
 
     <div class="container">
       <section class="navigation__container">
-        <nav>
-          <ul>
-            <li>НАЗВАНИЕ 1</li>
-            <li>НАЗВАНИЕ 2</li>
-            <li>НАЗВАНИЕ 3</li>
-            <li>НАЗВАНИЕ 4</li>
-            <li>ДЛИННОЕ НАЗВАНИЕ</li>
-            <li>ОЧЕНЬ ОЧЕНЬ ДЛИННОЕ НАЗВАНИЕ</li>
-            <li>ДЛИННОЕ НАЗВАНИЕ</li>
-            <li>НАЗВАНИЕ 5</li>
-          </ul>
-        </nav>
-      </section>
+          <div class="percentage__container _transparent">
+            <div id="percentage"></div>
+          </div>
+  
+          <nav>
+            <ul>
+              <li>НАЗВАНИЕ 1</li>
+              <li>НАЗВАНИЕ 2</li>
+              <li>НАЗВАНИЕ 3</li>
+              <li>НАЗВАНИЕ 4</li>
+              <li>ДЛИННОЕ НАЗВАНИЕ</li>
+              <li>ОЧЕНЬ ОЧЕНЬ ДЛИННОЕ НАЗВАНИЕ</li>
+              <li>ДЛИННОЕ НАЗВАНИЕ</li>
+              <li>НАЗВАНИЕ 5</li>
+            </ul>
+          </nav>
+        </section>
     
       <section class="content__container">
         <div class="content__left-margin">
@@ -38,16 +43,126 @@
         <div class="content__column">
           <div class="content__top-margin"></div>
           
-          <div class="content">
+          <div class="content" id="main-page">
             <h1>Lorem ipsum</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
             <p>Lorem ipsum?</p>
-            <button class="content__begin-button">Начать</button>
+            <button
+              class="content__begin-button"
+              onclick="openPickPage()"
+            >
+              Начать
+            </button>
+          </div>
+
+          <div class="content _deactive" id="pick-page">
+            <h1>Lorem ipsum dolor sit amet</h1>
+
+            <form
+              class="pick-form"
+              id="registrationForm"
+              onsubmit="validateForm(event)"
+              novalidate
+            >
+              <label class="pick-form__searching-sex-radio-wrapper">
+                <input class="pick-form__searching-sex-radio" type="radio" name="sex">
+                <div
+                  class="pick-form__searching-sex-button-male"
+                  onclick="addPercentage('52,4%', 'вариант а')"
+                >
+                  Вариант A
+                </div>
+              </label>
+              
+              <label class="pick-form__searching-sex-radio-wrapper">
+                <input  class="pick-form__searching-sex-radio" type="radio" name="sex">
+                <div
+                  class="pick-form__searching-sex-button-female"
+                  onclick="addPercentage('47,6%', 'вариант б')"
+                >
+                  Вариант B
+                </div>
+              </label>
+            </form>
+
+            <button
+              class="open-registration-page-button"
+              onclick="openRegistrationPage()"
+            >
+              Продолжить
+            </button>
+            
+          </div>
+
+          <div class="content _deactive" id="registration-page">
+            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</h1>
+
+            <form id="registrationForm" onsubmit="validateForm(event)" novalidate>
+              Я ищу:
+              <div class="form__searching-sex-container">
+                <label>
+                  <input class="form__searching-sex-radio" type="radio" name="sex">
+                  <div class="form__searching-sex-button-male">Вариант 1</div>
+                </label>
+                
+                <label>
+                  <input  class="form__searching-sex-radio" type="radio" name="sex">
+                  <div class="form__searching-sex-button-female">Вариант 2</div>
+                </label>
+              </div>
+
+              <label class="form__input-wrapper">
+                <div>Ваше имя:</div>
+                <input
+                  type="text"
+                  id="name"
+                  onkeypress="validateInput(event)"
+                  onfocusout="validateInput(event)"
+                >
+              </label>
+
+              <label class="form__input-wrapper">
+                <div>Email:</div>
+                <input
+                  type="email"
+                  id="email"
+                  onkeypress="validateInput(event)"
+                  onfocusout="validateInput(event)"
+                >
+              </label>
+
+              <label class="form__input-wrapper">
+                <div>Придумайте пароль:</div>
+                <input
+                  type="password"
+                  id="password"
+                  onkeypress="validateInput(event)"
+                  onfocusout="validateInput(event)"
+                >
+              </label>
+
+              <label class="form__checkbox-wrapper">
+                <input
+                  type="checkbox"
+                  id="agreement"
+                  onchange="validateInput(event)"
+                  onfocusout="validateInput(event)"
+                >
+                <div class="form__checkbox">✓</div>
+                <div>
+                  Регистрируясь, вы подтверждаете, что вам уже исполнилось 18 лет
+                  и вы ознакомились с правилами пользования сайтом.
+                </div>
+              </label>
+
+              <input type="submit" value="Продолжить" id="submit">
+            </form>
           </div>
         </div>
       </section>
     </div>
   </main>
 
+  <script src="scripts.js"></script>
 </body>
 </html>

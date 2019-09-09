@@ -1,9 +1,15 @@
+/*MAIN*/
+
+:root {
+  --main-color: #ec7099;
+}
+
 body {
   margin: 0;
 
   min-width: 750px;
 
-  background-image: url('https://www.sunridgedental.ca/uploads/lK5XVK7n/707x0_1130x0/happyface.jpg');
+  background-image: url('./images/happyface.jpg');
   background-repeat: no-repeat;
   background-size: 150vh 100vh;
   
@@ -11,7 +17,11 @@ body {
   font-weight: bold; 
 }
 
-.background {
+._deactive {
+  display: none;
+}
+
+.main__background {
   position: absolute;
   z-index: -1;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
@@ -19,6 +29,30 @@ body {
   width: calc(100% - 540px);
   min-height: calc(100vh - 15px);
   min-width: 210px;
+}
+
+.background {
+  position: absolute;
+  z-index: -1;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  
+  width: calc(100% - 500px);
+  min-height: calc(100vh - 15px);
+  min-width: 250px;
+}
+
+#percentage-background {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: -1;
+ 
+  width: calc(100% - 550px);
+  min-height: calc(100vh - 15px);
+  min-width: 210px;
+
+  background-color: #fcc150;
+  opacity: 0.6;
 }
 
 .container {
@@ -38,7 +72,7 @@ section {
 
 .navigation__container {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -50,6 +84,32 @@ section {
 
   background-color: white;
   opacity: 0.7;
+}
+
+.percentage__container {
+  display: flex;
+  height: 100%;
+}
+
+#percentage {
+  margin: auto;
+
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#percentage p:first-child {
+  text-align: center;
+  margin: 0;
+  font-size: 150px;
+  line-height: 160px;
+}
+
+#percentage p:last-child {
+  text-align: center;
+  margin: 0;
+  font-size: 28px;
 }
 
 .navigation__container nav>ul {
@@ -79,7 +139,7 @@ section {
 .content__top-margin {
   width: 100%;
   min-height: 120px;
-  background-color: #ec7099;
+  background-color: var(--main-color);
 }
 
 .content__column {
@@ -92,7 +152,7 @@ section {
 .content__left-margin {
   height: 100%;
   width: 8px;
-  background-color: #ec7099;
+  background-color: var(--main-color);
 }
 
 .content__left-margin-image {
@@ -106,7 +166,7 @@ section {
   height: 50px;
 
   border-radius: 50px;
-  background-color: #ec7099;
+  background-color: var(--main-color);
 }
 
 .content__left-margin-image>div {
@@ -117,7 +177,7 @@ section {
 
   border-radius: 36px;
   background-color: white;
-  background-image: url('./heart.png');
+  background-image: url('./images/heart.png');
   background-size: 26px 26px;
   background-repeat: no-repeat;
   background-position: 5px 5px;
@@ -146,7 +206,8 @@ section {
 .content h1 {
   text-transform: uppercase;
   font-size: 18px;
-  color: #ec7099;
+  color: var(--main-color);
+  max-width: 400px;
 }
 
 .content__begin-button {
@@ -175,7 +236,7 @@ section {
 }
 
 @media (min-width:  1100px) and (max-height: 700px) {
-  .background {
+  .main__background {
     max-width: calc(150vh - 340px);
     min-width: calc(150vh - 340px);
   }
@@ -192,7 +253,7 @@ section {
 }
 
 @media (min-width:  1300px) and (max-height: 800px) {
-  .background {
+  .main__background {
     max-width: calc(150vh - 340px);
     min-width: calc(150vh - 340px);
   }
@@ -209,7 +270,7 @@ section {
 }
 
 @media (min-width:  1450px) and (max-height: 1000px) {
-  .background {
+  .main__background {
     max-width: calc(150vh - 340px);
     min-width: calc(150vh - 340px);
   }
@@ -226,9 +287,337 @@ section {
 }
 
 @media (min-width:  1900px) and (min-height: 1000px) {
-  .background {
+  .main__background {
     max-width: calc(150vh - 340px);
     min-width: calc(150vh - 340px);
+  }
+
+  .navigation__container {
+    max-width: calc(150vh - 350px);
+    min-width: calc(150vh - 350px);
+  }
+  
+  .content__container {
+    min-width: 45%;
+	  width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*OTHER*/
+.content form {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 3px;
+
+  font-size: 10px;
+  text-transform: none;
+}
+
+.pick-form__searching-sex-radio-wrapper {
+  width: 220px;
+}
+
+.pick-form__searching-sex-radio {
+  width: 1px;
+  margin: 0;
+}
+
+.pick-form__searching-sex-button-male,
+.pick-form__searching-sex-button-female {
+  text-align: center;
+  padding: 10px 0;
+
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: white;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: 44px 8px;
+}
+
+.pick-form__searching-sex-button-male:active,
+.pick-form__searching-sex-button-female:active {
+  background-color: #e6ae46;
+}
+
+.pick-form__searching-sex-button-male {
+  background-image: url('./images/male.svg');
+  background-size: 25px 25px;
+}
+
+.pick-form__searching-sex-button-female {
+  background-image: url('./images/female.svg');
+  background-size: 25px 24px;
+}
+
+.pick-form__searching-sex-radio:checked ~ .pick-form__searching-sex-button-male,
+.pick-form__searching-sex-radio:checked ~ .pick-form__searching-sex-button-female {
+  background-color: #fcc150;
+}
+
+.open-registration-page-button {
+  width: 150px;
+
+  margin: 100px 0 0 35px;
+  padding: 10px;
+
+  border: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: white;
+  background-color: #fcc150;
+  cursor: pointer;
+  outline: none;
+}
+
+.open-registration-page-button:active {
+  background-color: #e6ae46;
+}
+
+
+
+.form__searching-sex-container {
+  display: flex;
+  margin-top: 3px;
+}
+
+.form__searching-sex-container label {
+  display: flex;
+}
+
+.form__searching-sex-radio {
+  width: 1px;
+  margin: 0;
+}
+
+.form__searching-sex-button-male,
+.form__searching-sex-button-female {
+  padding: 10px 10px 10px 35px;
+
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: white;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: 8px 8px;
+}
+
+.form__searching-sex-button-male:active,
+.form__searching-sex-button-female:active {
+  background-color: #1a9ab1;
+}
+
+.form__searching-sex-button-male {
+  background-image: url('./images/male.svg');
+  background-size: 25px 25px;
+  margin-right: 10px;
+}
+
+.form__searching-sex-button-female {
+  background-image: url('./images/female.svg');
+  background-size: 25px 24px;
+}
+
+.form__searching-sex-radio:checked ~ .form__searching-sex-button-male,
+.form__searching-sex-radio:checked ~ .form__searching-sex-button-female {
+  background-color: #1da7c0;
+}
+
+.form__input-wrapper {
+  margin-top: 5px;
+}
+
+.form__input-wrapper input {
+  width: 230px;
+  height: 40px;
+  
+  padding: 0 10px;
+
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form__invalid {
+  border: 1px solid red !important;
+  box-sizing: border-box;
+  width: 250px !important;
+}
+
+.form__invalid::placeholder {
+  color: #b72020;
+}
+
+.form__checkbox-wrapper {
+  display: flex;
+
+  max-width: 250px;
+  margin-top: 5px;
+
+  font-size: 7px;
+}
+
+.form__checkbox-wrapper input {
+  width: 1px;
+  margin: 0;
+}
+
+.form__checkbox {
+  min-width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  text-align: center;
+
+  border: 0.5px solid grey;
+  box-sizing: border-box;
+  background-color: rgb(216, 216, 216);
+  color: rgb(216, 216, 216);
+  font-size: 8px;
+}
+
+.form__checkbox-wrapper input:checked ~ .form__checkbox {
+  color: black;
+}
+
+.content form>input[type="submit"] {
+  width: 150px;
+
+  margin-top: 5px;
+  padding: 10px;
+
+  border: 1px solid #1da7c0;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: grey;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.form__submit--active {
+  color: white !important;
+  background-color: #1da7c0 !important;
+  padding: 100px;
+}
+
+.form__submit--active:active {
+  background-color: #1a9ab1 !important;
+}
+
+
+
+@media (min-width:  1100px) and (max-height: 700px) {
+  .background {
+    max-width: calc(150vh - 300px);
+    min-width: calc(150vh - 300px);
+  }
+
+  #percentage-background {
+    max-width: calc(150vh - 350px);
+    min-width: calc(150vh - 350px);
+  }
+
+  .navigation__container {
+    max-width: calc(150vh - 350px);
+    min-width: calc(150vh - 350px);
+  }
+  
+  .content__container {
+    min-width: 45%;
+	  width: 100%;
+  }
+}
+
+@media (min-width:  1300px) and (max-height: 800px) {
+  .background {
+    max-width: calc(150vh - 300px);
+    min-width: calc(150vh - 300px);
+  }
+
+  #percentage-background {
+    max-width: calc(150vh - 350px);
+    min-width: calc(150vh - 350px);
+  }
+
+  .navigation__container {
+    max-width: calc(150vh - 350px);
+    min-width: calc(150vh - 350px);
+  }
+  
+  .content__container {
+    min-width: 45%;
+	  width: 100%;
+  }
+}
+
+@media (min-width:  1450px) and (max-height: 1000px) {
+  .background {
+    max-width: calc(150vh - 300px);
+    min-width: calc(150vh - 300px);
+  }
+
+  #percentage-background {
+    max-width: calc(150vh - 350px);
+    min-width: calc(150vh - 350px);
+  }
+
+  .navigation__container {
+    max-width: calc(150vh - 350px);
+    min-width: calc(150vh - 350px);
+  }
+  
+  .content__container {
+    min-width: 45%;
+	  width: 100%;
+  }
+}
+
+@media (min-width:  1900px) and (min-height: 1000px) {
+  .background {
+    max-width: calc(150vh - 300px);
+    min-width: calc(150vh - 300px);
+  }
+
+  #percentage-background {
+    max-width: calc(150vh - 350px);
+    min-width: calc(150vh - 350px);
   }
 
   .navigation__container {
