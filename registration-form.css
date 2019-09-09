@@ -166,12 +166,11 @@ section {
 .form__searching-sex-button-male,
 .form__searching-sex-button-female {
   padding: 10px 10px 10px 35px;
-  border-radius: 5px;
 
+  border-radius: 5px;
   font-size: 15px;
   background-color: white;
   cursor: pointer;
-
   background-repeat: no-repeat;
   background-position: 8px 8px;
 }
@@ -212,11 +211,13 @@ section {
   outline: none;
 }
 
-.form__unvalid {
+.form__invalid {
   border: 1px solid red !important;
+  box-sizing: border-box;
+  width: 250px !important;
 }
 
-.form__unvalid::placeholder {
+.form__invalid::placeholder {
   color: #b72020;
 }
 
@@ -270,6 +271,10 @@ section {
 .form__submit--active {
   color: white !important;
   background-color: #1da7c0 !important;
+}
+
+.form__submit--active:active {
+  background-color: #1a9ab1 !important;
 }
 
 

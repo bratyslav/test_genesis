@@ -3,6 +3,8 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const agreement = document.getElementById('agreement');
 const submit = document.getElementById('submit');
+const percentage = document.getElementById('percentage');
+const percentageBackground = document.getElementById('percentage-background');
 const validEmail = /[A-Z0-9a-z]{1,64}@(?:[A-Z0-9a-z]{1,63}\.){1,125}[A-Za-z]{2,63}$/;
 
 const areAllValid = () => {
@@ -25,28 +27,28 @@ const setSubmitClass = () => {
 
 const validateName = () => {
   if (name.value.length === 0) {
-    name.classList.add('form__unvalid');
+    name.classList.add('form__invalid');
     name.placeholder = 'Введите свое имя';
   } else {
-    name.classList.remove('form__unvalid');
+    name.classList.remove('form__invalid');
   };
 };
 
 const validateEmail = () => {
   if (email.value.length === 0 || !validEmail.test(email.value)) {
-    email.classList.add('form__unvalid');
+    email.classList.add('form__invalid');
     email.placeholder = 'Неверный формат email';
   } else {
-    email.classList.remove('form__unvalid');
+    email.classList.remove('form__invalid');
   };
 };
 
 const validatePassword = () => {
   if (password.value.length === 0) {
-    password.classList.add('form__unvalid');
+    password.classList.add('form__invalid');
     password.placeholder = 'Придумайте новый пароль';
   } else {
-    password.classList.remove('form__unvalid');
+    password.classList.remove('form__invalid');
   };
 };
 
@@ -83,5 +85,24 @@ const validateInput = (event) => {
 
     default:
       break;
-  }
-}
+  };
+};
+
+
+
+
+const addPercentage = (percentageNumber, variantName) => {
+  percentage.innerHTML = `
+    <p>
+      ${percentageNumber}
+    </p>
+    <p>
+      пользователей - ${variantName}.
+    </p>
+  `;
+
+  percentageBackground.classList.remove('_deactive');
+};
+
+
+
